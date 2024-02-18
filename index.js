@@ -1,21 +1,21 @@
 const displayResult = document.querySelector('.display-calculations');
-const oneBtn = document.querySelector(".one");
-const twoBtn = document.querySelector(".two");
-const threeBtn = document.querySelector(".three");
-const fourBtn = document.querySelector(".four");
-const fiveBtn = document.querySelector(".five");
-const sixBtn = document.querySelector(".six");
-const sevenBtn = document.querySelector(".seven");
-const eightBtn = document.querySelector(".eight");
-const nineBtn = document.querySelector(".nine");
-const zeroBtn = document.querySelector(".zero");
-const dotBtn = document.querySelector(".dot");
-const addBtn = document.querySelector(".add");
-const substractBtn = document.querySelector(".substract");
-const multiplyBtn = document.querySelector(".multiply");
-const divideBtn = document.querySelector(".divide");
-const equalsBtn = document.querySelector(".equals");
-const clearBtn = document.querySelector(".clear");
+const oneBtn = document.querySelector(".one").addEventListener("click", toAddOne);
+const twoBtn = document.querySelector(".two").addEventListener("click", toAddTwo);
+const threeBtn = document.querySelector(".three").addEventListener("click", toAddThree);
+const fourBtn = document.querySelector(".four").addEventListener("click", toAddFour);
+const fiveBtn = document.querySelector(".five").addEventListener("click", toAddFive);
+const sixBtn = document.querySelector(".six").addEventListener("click", toAddSix);
+const sevenBtn = document.querySelector(".seven").addEventListener("click", toAddSeven);
+const eightBtn = document.querySelector(".eight").addEventListener("click", toAddEight);
+const nineBtn = document.querySelector(".nine").addEventListener("click", toAddNine);
+const zeroBtn = document.querySelector(".zero").addEventListener("click", toAddZero);
+const dotBtn = document.querySelector(".dot").addEventListener("click", dots);
+const addBtn = document.querySelector(".add").addEventListener("click", addition);
+const substractBtn = document.querySelector(".substract").addEventListener("click", substraction);
+const multiplyBtn = document.querySelector(".multiply").addEventListener("click", mulitplication);
+const divideBtn = document.querySelector(".divide").addEventListener("click", division);
+const equalsBtn = document.querySelector(".equals").addEventListener("click", equation);
+const clearBtn = document.querySelector(".clear").addEventListener("click", clear);
 
 calculation = "";
 
@@ -23,94 +23,70 @@ function updateDisplay() {
     displayResult.textContent = calculation || '0'; // Display '0' if calculation is empty
 }
 
-function toAddOne(){
-    calculation += "1"
+function updateCalculation(value){
+    calculation += value
     updateDisplay()
     console.log(calculation)
+}
+
+function toAddOne(){
+    updateCalculation("1") 
 }
 
 function toAddTwo(){
-    calculation += "2"
-    updateDisplay()
-    console.log(calculation)
+    updateCalculation("2") 
 }
 
 function toAddThree(){
-    calculation += "3"
-    updateDisplay()
-    console.log(calculation)
+    updateCalculation("3") 
 }
 
 function toAddFour(){
-    calculation += "4"
-    updateDisplay()
-    console.log(calculation)
+    updateCalculation("4") 
 }
 
 function toAddFive(){
-    calculation += "5"
-    updateDisplay()
-    console.log(calculation)
+    updateCalculation("5") 
 }
 
 function toAddSix(){
-    calculation += "6"
-    updateDisplay()
-    console.log(calculation)
+    updateCalculation("6") 
 }
 
 function toAddSeven(){
-    calculation += "7"
-    updateDisplay()
-    console.log(calculation)
+    updateCalculation("7") 
 }
 
 function toAddEight(){
-    calculation += "8"
-    updateDisplay()
-    console.log(calculation)
+    updateCalculation("8") 
 }
 
 function toAddNine(){
-    calculation += "9"
-    updateDisplay()
-    console.log(calculation)
+    updateCalculation("9") 
 }
 
 function toAddZero(){
-    calculation = "0"
-    updateDisplay()
-    console.log(calculation)
+    updateCalculation("0") 
 }
 
 function dots(){
-    calculation += "."
-    updateDisplay()
-    console.log(calculation)
+    updateCalculation(".") 
 }
 
 function addition(){
-    calculation += " + "
-    updateDisplay()
-    console.log(calculation)
+    updateCalculation(" + ") 
 }
 
 function substraction(){
-    calculation += " - "
-    updateDisplay()
-    console.log(calculation)
+    updateCalculation(" - ") 
 }
 
 function mulitplication(){
-    calculation += " * "
-    updateDisplay()
-    console.log(calculation)
+    updateCalculation(" * ") 
 }
 
 function division(){
-    calculation += " / "
-    updateDisplay()
-    console.log(calculation)
+    updateCalculation(" / ") 
 }
 
 function equation(){
@@ -125,20 +101,4 @@ function clear(){
     console.log(`Cleared: 0${calculation}`)
 }
 
-oneBtn.addEventListener("click", toAddOne);
-twoBtn.addEventListener("click", toAddTwo);
-threeBtn.addEventListener("click", toAddThree);
-fourBtn.addEventListener("click", toAddFour);
-fiveBtn.addEventListener("click", toAddFive);
-sixBtn.addEventListener("click", toAddSix);
-sevenBtn.addEventListener("click", toAddSeven);
-eightBtn.addEventListener("click", toAddEight);
-nineBtn.addEventListener("click", toAddNine);
-zeroBtn.addEventListener("click", toAddZero);
-dotBtn.addEventListener("click", dots);
-addBtn.addEventListener("click", addition);
-substractBtn.addEventListener("click", substraction);
-multiplyBtn.addEventListener("click", mulitplication);
-divideBtn.addEventListener("click", division);
-equalsBtn.addEventListener("click", equation);
-clearBtn.addEventListener("click", clear);
+

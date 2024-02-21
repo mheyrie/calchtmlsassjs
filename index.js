@@ -20,7 +20,7 @@ const clearBtn = document.querySelector(".clear").addEventListener("click", clea
 let calculation = localStorage.getItem("calculation") || "";
 
 function updateDisplay() {
-    displayResult.textContent = calculation || '0'; // Display '0' if calculation is empty
+    displayResult.textContent = calculation || '0';  // Note This Display '0' if calculation is empty
 }
 
 function updateCalculation(value){

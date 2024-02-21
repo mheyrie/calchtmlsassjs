@@ -17,7 +17,7 @@ const divideBtn = document.querySelector(".divide").addEventListener("click", di
 const equalsBtn = document.querySelector(".equals").addEventListener("click", equation);
 const clearBtn = document.querySelector(".clear").addEventListener("click", clear);
 
-calculation = "";
+let calculation = localStorage.getItem("calculation") || "";
 
 function updateDisplay() {
     displayResult.textContent = calculation || '0'; // Display '0' if calculation is empty
@@ -27,6 +27,11 @@ function updateCalculation(value){
     calculation += value
     updateDisplay()
     console.log(calculation)
+    saveCalculation()
+}
+
+function saveCalculation(){
+    localStorage.setItem("calculation", calculation)
 }
 
 function toAddOne(){
@@ -98,6 +103,7 @@ function equation(){
 function clear(){
     calculation = ""
     updateDisplay()
+    saveCalculation()
     console.log(`Cleared: 0${calculation}`)
 }
 
